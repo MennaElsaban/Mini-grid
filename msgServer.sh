@@ -4,7 +4,7 @@
 NUM_CORES=$(cat /proc/cpuinfo | grep processor | wc -l)
 
 # Server FIFO
-SERVER_FIFO="/tmp/server-$melsaban-inputfifo"
+SERVER_FIFO="/tmp/server-$USER-inputfifo"
 
 # Create server FIFO if it doesn't exist
 [ -p "$SERVER_FIFO" ] || mkfifo "$SERVER_FIFO"
@@ -49,7 +49,7 @@ start_workers
 assign_task() {
   local task="$1"
   local worker_index=$(( (TASKS_PROCESSED % NUM_CORES) ))
-  echo "CMD $task" > "/tmp/worker-$melsaban-$worker_index-inputfifo"
+  echo "CMD $task" > "/tmp/worker-$USER-$worker_index-inputfifo"
   echo "Task assigned: $task to worker ${WORKER_PIDS[$worker_index]}"
   ((TASKS_PROCESSED++))
 }
