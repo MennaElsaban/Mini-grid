@@ -4,10 +4,10 @@
 WORKER_ID="$1"
 
 # Worker FIFO
-WORKER_FIFO="/tmp/worker-$melsaban-$WORKER_ID-inputfifo"
+WORKER_FIFO="/tmp/worker-$USER-$WORKER_ID-inputfifo"
 
 # Worker log file
-LOG_FILE="/tmp/worker-$melsaban-$WORKER_ID.log"
+LOG_FILE="/tmp/worker-$USER-$WORKER_ID.log"
 
 # Create worker FIFO if it doesn't exist
 [ -p "$WORKER_FIFO" ] || mkfifo "$WORKER_FIFO"
