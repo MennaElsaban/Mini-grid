@@ -44,7 +44,11 @@ This will display the current system status, including the number of workers and
 This will send a shutdown command to the server, allowing the system to clean up and exit gracefully.
 
 ## Testing
-Use the provided `timedCountdown.sh` script as a sample task for testing. For example:
+To run the tests, execute the jobs provided in `runtests.sh` script.
+OR
+Use the provided `timedCountdown.sh` script as a sample task for testing. 
+
+For example:
 
 ```bash
 ./submitJob.sh "./timedCountdown.sh 5"
