@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Server FIFO
-SERVER_FIFO="/tmp/server-$melsaban-inputfifo"
+SERVER_FIFO="/tmp/server-$USER-inputfifo"
 
 # Function to send a command to the server
 send_command() {
